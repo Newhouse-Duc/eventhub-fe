@@ -1,6 +1,9 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EventHub Frontend (eventhub-fe)
 
-## Getting Started
+Giao diện Web Client & Dashboard cho nền tảng **Smart Event & Realtime Ticketing Platform (EventHub)** được xây dựng bằng **Next.js 16 (App Router)**, **React 19**, **Tailwind CSS v4** và **Redux Toolkit / RTK Query**.
+
+---
+
 
 First, run the development server:
 
