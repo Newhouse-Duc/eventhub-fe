@@ -11,7 +11,10 @@ import {
   LogOut, 
   Sparkles, 
   ChevronRight,
-  Bell
+  Bell,
+  Ticket,
+  Star,
+  PawPrint
 } from 'lucide-react';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -25,6 +28,9 @@ import { api } from '@/store/baseApi';
 const NAV_ITEMS = [
   { id: 'profile', label: 'Hồ sơ cá nhân', href: '/account', icon: User },
   { id: 'orders', label: 'Quản lý đơn hàng', href: '/account/orders', icon: ShoppingBag, badge: 3 },
+  { id: 'pets', label: 'Hồ sơ thú cưng', href: '/account/pets', icon: PawPrint },
+  { id: 'vouchers', label: 'Kho Voucher & Điểm', href: '/account/vouchers', icon: Ticket, badge: 3 },
+  { id: 'reviews', label: 'Đánh giá sản phẩm', href: '/account/reviews', icon: Star },
   { id: 'addresses', label: 'Sổ địa chỉ nhận hàng', href: '/account/addresses', icon: MapPin },
   { id: 'security', label: 'Bảo mật & Mật khẩu', href: '/account/security', icon: ShieldCheck },
 ];
@@ -53,6 +59,12 @@ export default function AccountLayout({ children }: { children: React.ReactNode 
       label:
         pathname === '/account/orders'
           ? 'Đơn hàng'
+          : pathname === '/account/pets'
+          ? 'Thú cưng'
+          : pathname === '/account/vouchers'
+          ? 'Voucher & Điểm'
+          : pathname === '/account/reviews'
+          ? 'Đánh giá'
           : pathname === '/account/addresses'
           ? 'Sổ địa chỉ'
           : pathname === '/account/security'

@@ -50,7 +50,8 @@ export function Header() {
       ),
     },
     { type: 'divider' },
-    { key: 'orders', label: <Link href="/orders">Đơn hàng</Link> },
+    { key: 'orders', label: <Link href="/account/orders">Đơn hàng</Link> },
+    { key: 'vouchers', label: <Link href="/account/vouchers">Kho Voucher</Link> },
     { key: 'wishlist', label: <Link href="/wishlist">Yêu thích</Link> },
     { type: 'divider' },
     { key: 'logout', danger: true, label: 'Đăng xuất', onClick: handleLogout },
@@ -60,7 +61,10 @@ export function Header() {
     { label: 'Chó', href: '/products?category=dog' },
     { label: 'Mèo', href: '/products?category=cat' },
     { label: 'Thương hiệu', href: '/brands' },
+    { label: 'Khuyến mãi', href: '/promotions' },
     { label: 'Dịch vụ Spa', href: '/services' },
+    { label: 'Cẩm nang', href: '/blog' },
+    { label: 'Cửa hàng', href: '/stores' },
   ];
 
   return (
@@ -168,10 +172,14 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-          <div className="py-6 mt-4 border-t border-stone-200 flex items-center gap-2 text-amber-600 font-medium">
+          <Link
+            href="/stores"
+            onClick={() => setMobileMenuOpen(false)}
+            className="py-6 mt-4 border-t border-stone-200 flex items-center gap-2 text-amber-600 font-medium hover:text-amber-700"
+          >
             <MapPin className="w-4 h-4" />
             <span className="text-sm">Hệ thống 12 cửa hàng toàn quốc</span>
-          </div>
+          </Link>
         </nav>
       </AppDrawer>
     </>
